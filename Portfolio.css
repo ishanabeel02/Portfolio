@@ -1,0 +1,401 @@
+* {
+    color: white;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #000;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+}
+
+nav {
+    height: 100vh;
+    width: 100%;
+    background-image: url("bg-removebg-preview.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.picture {
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60%;
+}
+
+h1 {
+    margin: 15% 28% 0;
+    color: white;
+    font-family: "Fascinate Inline";
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.picnavbar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.picnavbar > figure {
+    flex: 1 1 30%;
+    margin: 10px;
+}
+
+.picnavbar > figure:nth-child(odd) {
+    transform: translateY(-30px);
+}
+
+figure > img {
+    border-radius: 10%;
+    width: 100%;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+#Portfolio {
+    text-align: center;
+}
+
+#Portfolio > h2 {
+    font-family: 'Notable';
+    font-size: 4rem;
+    margin: 50px;
+}
+
+#Portfolio div {
+    display: inline-block;
+}
+
+#Portfolio div > img {
+    margin: 20px;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+#About {
+    background-image: url("last.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80%;
+    padding: 10%;
+    margin: 1%;
+    overflow: auto;
+}
+#Contact {
+    text-align: center;
+}
+
+#Contact > h2 {
+    font-size: 3rem;
+}
+
+.quote {
+    padding: 10px;
+    margin: 50px;
+}
+
+.quote > h2 {
+    font-family: 'Dancing Script';
+}
+
+.logo {
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos i {
+    font-size: 24px;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.logos i:hover {
+    color: #ff69b4;
+}
+
+.about {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.about > h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger #toggle:checked ~ .dropdown-menu {
+    display: block; 
+}
+
+/* Large Screens and Medium Screens */
+@media (max-width: 900px) {
+    .picnavbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .picnavbar > figure {
+        transform: none; /* Remove translation */
+        flex: 1 1 45%; /* Adjust flex-basis for better alignment */
+    }
+    figure > img {
+        width: 100%; /* Increase width to fit screen better */
+        max-width: 380px; /* Adjust max-width as needed */
+    }
+
+    #Portfolio div > img {
+        width: 150px;
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 899px) {
+    .hamburger {
+        display: block; /* Show hamburger menu */
+        position: fixed; /* Fixed position to stick it at the top-right */
+        top: 0; /* Align it to the top */
+        right: 100; /* Align it to the right */
+        background: transparent; /* Transparent background */
+        cursor: pointer; /* Change cursor to pointer */
+        z-index: 1000; /* Ensure it's on top of other elements */
+        padding: 10px; /* Adjust padding as needed */
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+        font-weight: bolder;
+
+    }
+
+    .hamburger div {
+        width: 80px; /* Width of the lines */
+        height: 6px; /* Height of the lines */
+        background: white; /* Color of the lines */
+        margin: 6px 0; /* Space between lines */
+        
+    }
+
+    .nav-links {
+        display: none; /* Hide menu items by default */
+        flex-direction: column;
+        align-items: center;
+        background-color: #000; /* Background color for dropdown */
+        position: fixed; /* Fixed position to stick it at the top-right */
+        top: 60px; /* Position dropdown below the hamburger menu */
+        right: 0;
+        width: 100%; /* Full width of the dropdown menu */
+        max-width: 100%; /* Ensure it does not exceed viewport width */
+        z-index: 1000;
+    }
+
+    #toggle:checked ~ .nav-links {
+        display: flex; /* Show dropdown menu when checkbox is checked */
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        width: 100%; /* Full width of the dropdown menu */
+    }
+
+    .nav-links li {
+        width: 100%; /* Ensure each item takes full width of the dropdown */
+        text-align: center; /* Center-align text */
+    }
+    .nav-links li:nth-child(odd) {
+        background-color: #b04098;
+    }
+
+    .nav-links a {
+        display: block; /* Block display for clickable area */
+        padding: 15px; /* Padding for spacing */
+        color: white; /* Text color */
+        text-decoration: none; /* Remove underline */
+        border-bottom: 1px solid #444; /* Optional: add a bottom border */
+    }
+
+    .nav-links a:hover {
+        background-color: #555; /* Change background on hover */
+    }
+
+    nav {
+        background-color: #000; /* Solid color for mobile */
+        overflow: hidden; /* Ensure no content overflow */
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        display: none; /* Hide the desktop menu */
+    }
+
+    #Portfolio div > img {
+        width: 100px;
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    #About {
+        padding: 5%;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
+
+    #Contact {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    header {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .picnavbar {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden; /* Ensure no overflow */
+        margin: 0;
+        padding: 0;
+    }
+
+    .picnavbar > figure {
+        flex: 1 1 auto; /* Adjust flex-basis for better alignment */
+        margin: 10px;
+        transform: none; /* Remove translation */
+    }
+    .picnavbar > figure:nth-child(odd) {
+transform: none;
+    }
+
+    figure {
+        width: 100%; /* Full width of the container */
+        box-sizing: border-box; /* Include padding and border in width */
+        margin: 0;
+        padding: 0;
+    }
+
+    figure > img {
+        width: 100%; /* Increase width to fit the screen */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    #Portfolio div > img {
+        width: 100px;
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    #About {
+        height: auto; /* Adjust height based on content */
+    }
+    nav 
+    {
+        margin: 0 15%;
+    }
+    #Portfolio {
+        text-align: center; /* Center text */
+    }
+    
+    #Portfolio > h2 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+        margin: 20px 0; /* Margin for spacing */
+    }
+    
+    #Portfolio div {
+        display: flex;
+        flex-wrap: wrap; /* Wrap items to new lines */
+        justify-content: center; /* Center items horizontally */
+        gap: 10px; /* Space between items */
+    }
+    
+    #Portfolio div > img {
+        width: calc(50% - 10px); /* 2 items per line with space */
+    }    
+}
+
+
+/* Mobile Phones */
+@media (max-width: 899px) {
+    #Portfolio {
+        text-align: center; /* Center text */
+    }
+
+    #Portfolio > h2 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+        margin: 20px 0; /* Margin for spacing */
+    }
+
+    #Portfolio div {
+        display: flex;
+        flex-wrap: wrap; /* Wrap items to new lines */
+        justify-content: center; /* Center items horizontally */
+        gap: 10px; /* Space between items */
+    }
+
+    #Portfolio div > img {
+        width: calc(50% - 10px); /* 2 items per line with space */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 150px; /* Set max-width for consistent size */
+    }
+}
