@@ -409,7 +409,7 @@ transform: none;
         max-width: 150px; /* Set max-width for consistent size */
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 460px) {
     #Portfolio div > img {
         width: 100%; /* Make the image take up 100% of its parent container's width */
         height: auto; /* Maintain the aspect ratio */
