@@ -1,3 +1,9 @@
+#profile-picture {
+    width: 150px; /* Adjust size */
+    height: auto;
+    border-radius: 50%; /* Make it a circle */
+}
+
 * {
     color: white;
     box-sizing: border-box;
@@ -89,6 +95,7 @@ figure > img {
     margin: 50px;
 }
 
+
 #Portfolio div {
     display: inline-block;
 }
@@ -99,7 +106,10 @@ figure > img {
     height: 300px;
     object-fit: cover;
     display: inline-block;
+
+    
 }
+
 
 #About {
     background-image: url("last.jpg");
@@ -148,7 +158,25 @@ figure > img {
 .logos i:hover {
     color: #ff69b4;
 }
-
+#twitter i:hover {
+    color: #3b26a1;
+}
+#linkedin i:hover {
+    color: #1616dc;
+}
+#facebook i:hover {
+    color: #1616dc;
+}
+.nav-links li a:hover
+{
+    font-size: larger;
+    color: #ff69b4;
+}
+.picnavbar figcaption a:hover
+{
+    color: rgb(200, 170, 125);
+    font-size: large;
+}
 .about {
     font-size: 2rem;
     text-align: center;
